@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Crimson Pro", serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-50 text-slate-900 overflow-x-hidden;
+  }
+  
+  h1, h2, h3, .serif-font {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background-color: white !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    main {
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .manifest-container {
+      box-shadow: none !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 0 !important;
+    }
+  }
+}
